@@ -1,7 +1,6 @@
 package com.vivek.wo.ball;
 
 import com.vivek.wo.ball.service.RequestStepService;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

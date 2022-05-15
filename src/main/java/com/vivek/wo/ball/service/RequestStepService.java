@@ -109,6 +109,7 @@ public class RequestStepService {
     private void executeRequestStepAsync(ExecutorService executorService, RequestStep requestStep) {
         int retryCount = propertiesConfiguration.getRetryCount();
         CountDownLatch countDownLatch = new CountDownLatch(1);
+        long intervalTime = propertiesConfiguration.getIntervalTime();
         while (true) {
             executorService.execute(() -> {
                 requestStep.execute();
@@ -134,7 +135,7 @@ public class RequestStepService {
                 break;
             }
             try {
-                Thread.sleep(100);
+                Thread.sleep(intervalTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

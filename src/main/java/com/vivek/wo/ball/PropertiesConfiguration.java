@@ -15,8 +15,9 @@ public class PropertiesConfiguration {
     private int billTime;
     private boolean autoSetup;
     private boolean autoSetupCountLimit;
+    private long intervalTime = 200;
     private boolean asyncHttp;
-    private int retryCount = 30;
+    private int retryCount = 5;
 
     //直接订场配置
     private boolean directOrder;
